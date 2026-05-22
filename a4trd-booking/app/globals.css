@@ -34,7 +34,6 @@
       #0a0a0a 0%,
       #1a1a1a 100%
     );
-
     --foreground: #ededed;
   }
 }
@@ -49,31 +48,36 @@ body {
   min-height: 100vh;
 }
 /* --- Calendar base --- */
+.rdp-root{
+  --rdp-accent-color: #ffbb00;
+  font-weight: 700;
+}
 .rdp {
   font-family: inherit;
 }
-
+/* Today */
+.rdp-day[aria-disabled="true"] {
+  color: #bbb;
+  opacity: 0.5;
+}
+.rdp-day_today {
+  opacity: 1;
+}
+/* Hover effect */
+.rdp-day:hover {
+  background-color: #1a1a1a;
+  border-radius: 20px;
+}
 /* Selected day */
 .rdp-day_selected,
 .rdp-day_selected:focus-visible,
 .rdp-day_selected:hover {
   border-radius: 20px;
 }
-
-/* Today */
-.rdp-day_today {
-  font-weight: bold;
-}
-
-/* Hover effect */
-.rdp-day:hover {
-  background-color: #1a1a1a;
-  border-radius: 20px;
-}
-
 /* Remove ugly default focus ring */
 .rdp-selected .rdp-day_button {
   background-color: #a855f7;
+  color: #bbb;
   border: none;
 }
 .rdp-button:focus-visible {

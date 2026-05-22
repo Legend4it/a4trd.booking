@@ -1,19 +1,17 @@
 "use client";
 
-import { useState } from "react";
 import { DayPicker } from "react-day-picker";
 
+const today = new Date();
 
-export default function BookingCalendar({ onDateSelect }: {
+export default function BookingCalendar({
+    selected,
+    onDateSelect,
+}: {
+    selected?: Date;
     onDateSelect?: (date: Date | undefined) => void;
+    
 }) {
-    const [selected, setSelected] = useState<Date | undefined>();
-
-    function handleSelect(date: Date | undefined) {
-        setSelected(date);
-        onDateSelect?.(date);
-    }
-
     return (
         <div className="w-full max-w-md rounded-2xl bg-background shadow-lg border border-gray-100 p-6">
             {/* Header */}
@@ -31,8 +29,9 @@ export default function BookingCalendar({ onDateSelect }: {
                 <DayPicker
                     mode="single"
                     selected={selected}
-                    onSelect={handleSelect}
+                    onSelect={onDateSelect}
                     className="mx-auto"
+                    disabled={{ before: today }}
                 />
             </div>
 

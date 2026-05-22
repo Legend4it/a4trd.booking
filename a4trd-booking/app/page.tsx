@@ -36,7 +36,7 @@ export default function Home() {
       </div>
 
       {/* Calendar */}
-      <BookingCalendar onDateSelect={handleDateSelect} />
+      <BookingCalendar selected={selectedDate} onDateSelect={handleDateSelect} />
 
       {/* Debug UI */}
       {/* {selectedDate && (
