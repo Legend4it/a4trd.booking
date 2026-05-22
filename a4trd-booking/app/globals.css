@@ -48,3 +48,34 @@ body {
 
   min-height: 100vh;
 }
+/* --- Calendar base --- */
+.rdp {
+  font-family: inherit;
+}
+
+/* Selected day */
+.rdp-day_selected,
+.rdp-day_selected:focus-visible,
+.rdp-day_selected:hover {
+  border-radius: 20px;
+}
+
+/* Today */
+.rdp-day_today {
+  font-weight: bold;
+}
+
+/* Hover effect */
+.rdp-day:hover {
+  background-color: #1a1a1a;
+  border-radius: 20px;
+}
+
+/* Remove ugly default focus ring */
+.rdp-selected .rdp-day_button {
+  background-color: #a855f7;
+  border: none;
+}
+.rdp-button:focus-visible {
+  outline: none;
+}
