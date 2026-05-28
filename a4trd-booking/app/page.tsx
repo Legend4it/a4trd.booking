@@ -24,11 +24,11 @@ export default function Home() {
           A4trd Booking
         </h1>
 
-        <input
+        {/* <input
           type="text"
           placeholder="Enter your name"
           className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
+        /> */}
 
         <p className="text-gray-300 text-lg md:text-xl">
           A smarter way to manage bookings. Launching soon.
@@ -55,6 +55,13 @@ export default function Home() {
           </p>
         </div>
       )}
+      <ul className="list-disc list-inside text-left text-gray-300">
+        <li>1- Select a date</li>
+        <li>2- Choose a time slot</li>
+        <li>3- Choose a service</li>
+        <li>4- Confirm your booking</li>
+      </ul>
+
 
       {/* Footer */}
       <div className="text-center text-sm text-gray-300">
