@@ -36,7 +36,7 @@ export default function BookingCalendar({
             </div>
 
             {/* Selected date */}
-            {selected && (
+            {/* {selected && (
                 <div className="mt-5 rounded-lg bg-background border border-gray-300 p-3">
                     <p className="text-sm text-foreground font-medium">
                         Selected date
@@ -45,7 +45,7 @@ export default function BookingCalendar({
                         {selected.toDateString()}
                     </p>
                 </div>
-            )}
+            )} */}
         </div>
     );
 }

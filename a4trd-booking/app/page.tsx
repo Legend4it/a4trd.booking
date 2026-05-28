@@ -45,6 +45,17 @@ export default function Home() {
         </div>
       )} */}
 
+      {selectedDate && (
+        <div className="w-full max-w-md rounded-lg bg-background border border-gray-300 p-3">
+          <p className="text-sm text-foreground font-medium">
+            Selected date
+          </p>
+          <p className="text-foreground font-semibold">
+            {selectedDate.toDateString()}
+          </p>
+        </div>
+      )}
+
       {/* Footer */}
       <div className="text-center text-sm text-gray-300">
         © {new Date().getFullYear()} Bookly. All rights reserved.
