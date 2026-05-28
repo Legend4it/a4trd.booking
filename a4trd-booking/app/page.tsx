@@ -2,9 +2,11 @@
 
 import { useState } from "react";
 import BookingCalendar from "./components/BookingCalendar";
+import TimeSlots from "./components/TimeSlots";
 
 export default function Home() {
   const [selectedDate, setSelectedDate] = useState<Date | undefined>();
+  const [selectedTime, setSelectedTime] = useState<string | undefined>();
 
   function handleDateSelect(date: Date | undefined) {
     setSelectedDate(date);
@@ -44,14 +46,21 @@ export default function Home() {
           Selected: {selectedDate.toDateString()}
         </div>
       )} */}
-
+      {/* Debug UI */}
       {selectedDate && (
+        <TimeSlots
+          selectedTime={selectedTime}
+          onTimeSelect={setSelectedTime}
+        />
+      )}
+
+      {selectedDate && selectedTime && (
         <div className="w-full max-w-md rounded-lg bg-background border border-gray-300 p-3">
           <p className="text-sm text-foreground font-medium">
-            Selected date
+            Selected date and time
           </p>
           <p className="text-foreground font-semibold">
-            {selectedDate.toDateString()}
+            {selectedDate.toDateString()} at {selectedTime.toString()}
           </p>
         </div>
       )}
