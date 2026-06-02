@@ -27,11 +27,12 @@ export default function TimeSlots({
                             onTimeSelect?.(slot)
                         }
                         className={`
-                            rounded-xl border p-3 transition
+                            time-slot
+                            rounded-xl border p-2 transition
                             ${
                                 selectedTime === slot
-                                    ? "bg-black text-white"
-                                    : "hover:bg-gray-100"
+                                    ? "time-slot-selected"
+                                    : "time-slot"
                             }
                         `}
                     >

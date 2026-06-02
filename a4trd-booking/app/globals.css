@@ -83,3 +83,21 @@ body {
 .rdp-button:focus-visible {
   outline: none;
 }
+
+/* Time Slots*/
+.time-slot {
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #d1d5db;
+    transition: all 0.2s ease;
+}
+
+.time-slot:hover {
+    background-color: #1a1a1a;
+}
+
+.time-slot-selected, .time-slot-selected:hover, .time-slot-selected:focus-visible {
+    background-color: #a855f7;
+    color: #bbb;
+    border-color: #d1d5db;
+}
