@@ -13,7 +13,7 @@ export default function BookingCalendar({
     
 }) {
     return (
-        <div className="w-full max-w-md rounded-2xl bg-background shadow-lg border border-gray-100 p-6">
+        <div className="w-full max-w-md rounded-md bg-background shadow-lg border border-gray-100 p-6">
             {/* Header */}
             <div className="mb-4">
                 <h2 className="text-xl font-semibold text-foreground">

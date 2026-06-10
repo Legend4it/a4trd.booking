@@ -14,7 +14,7 @@ export default function TimeSlots({
     onTimeSelect?: (time: string) => void
 }) {
     return (
-        <div className="w-full max-w-md rounded-2xl bg-background shadow-lg border border-gray-100 p-6">
+        <div className="w-full max-w-md rounded-md bg-background shadow-lg border border-gray-100 p-6">
             <h2 className="mb-4 text-xl font-semibold">
                 Choose a time
             </h2>
@@ -28,7 +28,7 @@ export default function TimeSlots({
                         }
                         className={`
                             time-slot
-                            rounded-xl border p-2 transition
+                            rounded-md border p-2 transition
                             ${
                                 selectedTime === slot
                                     ? "time-slot-selected"

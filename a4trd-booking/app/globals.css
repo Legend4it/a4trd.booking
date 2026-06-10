@@ -101,3 +101,46 @@ body {
     color: #bbb;
     border-color: #d1d5db;
 }
+/* Services */
+.service-options {
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #d1d5db;
+    transition: all 0.2s ease;
+}
+
+.service-options:hover {
+    background-color: #1a1a1a;
+}
+
+.service-options-selected, .service-options-selected:hover, .service-options-selected:focus-visible {
+    background-color: #a855f7;
+    color: #bbb;
+    border-color: #d1d5db;
+}
+
+@layer components {
+  .service-tooltip {
+    @apply relative inline-block;
+  }
+
+  .service-tooltip-content {
+    @apply invisible absolute bottom-full left-1/2 z-50 mb-2 w-56 -translate-x-1/2 px-3 py-2 text-sm text-white opacity-0 transition-all duration-200;
+    background-color: #1a1a1a;
+    color: white;
+  }
+
+  .service-tooltip:hover .service-tooltip-content {
+    @apply visible opacity-100;
+  }
+
+  .service-tooltip-arrow {
+    @apply absolute
+           left-1/2
+           top-full
+           -translate-x-1/2
+           border-4
+           border-transparent
+           border-t-gray-900;
+  }
+}

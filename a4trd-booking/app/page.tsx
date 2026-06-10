@@ -3,10 +3,12 @@
 import { useState } from "react";
 import BookingCalendar from "./components/BookingCalendar";
 import TimeSlots from "./components/TimeSlots";
+import AvailableServices from "./components/AvailableServices";
 
 export default function Home() {
   const [selectedDate, setSelectedDate] = useState<Date | undefined>();
   const [selectedTime, setSelectedTime] = useState<string | undefined>();
+  const [selectedService, setSelectedService] = useState<string | undefined>();
 
   function handleDateSelect(date: Date | undefined) {
     setSelectedDate(date);
@@ -36,6 +38,12 @@ export default function Home() {
           A smarter way to manage bookings. Launching soon.
         </p>
       </div>
+
+      {/* Available Services */}
+      <AvailableServices
+        selectedService={selectedService}
+        onServiceSelect={setSelectedService}
+      />
 
       {/* Calendar */}
       <BookingCalendar selected={selectedDate} onDateSelect={handleDateSelect} />
