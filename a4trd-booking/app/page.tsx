@@ -46,7 +46,9 @@ export default function Home() {
       />
 
       {/* Calendar */}
+      {selectedService && (
       <BookingCalendar selected={selectedDate} onDateSelect={handleDateSelect} />
+      )}
 
       {/* Debug UI */}
       {/* {selectedDate && (
@@ -68,17 +70,10 @@ export default function Home() {
             Selected date and time
           </p>
           <p className="text-foreground font-semibold">
-            {selectedDate.toDateString()} at {selectedTime.toString()}
+            {selectedService} : {selectedDate.toDateString()} at {selectedTime.toString()}
           </p>
         </div>
       )}
-      <ul className="list-disc list-inside text-left text-gray-300">
-        <li>1- Select a date</li>
-        <li>2- Choose a time slot</li>
-        <li>3- Choose a service</li>
-        <li>4- Confirm your booking</li>
-      </ul>
-
 
       {/* Footer */}
       <div className="text-center text-sm text-gray-300">
