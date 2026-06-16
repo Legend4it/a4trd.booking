@@ -77,7 +77,7 @@ export default function Home() {
 
       {/* Footer */}
       <div className="text-center text-sm text-gray-300">
-        © {new Date().getFullYear()} Bookly. All rights reserved.
+        © {new Date().getFullYear()} A4trd Booking. All rights reserved.
       </div>
 
     </main>
