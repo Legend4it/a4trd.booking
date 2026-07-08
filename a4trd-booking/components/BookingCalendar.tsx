@@ -1,4 +1,3 @@
-"use client";
 
 import { DayPicker } from "react-day-picker";
 
@@ -34,18 +33,6 @@ export default function BookingCalendar({
                     disabled={{ before: today }}
                 />
             </div>
-
-            {/* Selected date */}
-            {/* {selected && (
-                <div className="mt-5 rounded-lg bg-background border border-gray-300 p-3">
-                    <p className="text-sm text-foreground font-medium">
-                        Selected date
-                    </p>
-                    <p className="text-foreground font-semibold">
-                        {selected.toDateString()}
-                    </p>
-                </div>
-            )} */}
         </div>
     );
 }
