@@ -1,10 +1,10 @@
-import { AvailableServicesType } from "../types/AvailableServicesType";
 
+import type { AvailableServicesType } from "@/types/AvailableServicesType";
 
 type AvailableServicesProps = {
   availableServices: AvailableServicesType[];
-  selectedService?: string;
-  onServiceSelect?: (service: string) => void;
+  selectedService?: AvailableServicesType;
+  onServiceSelect?: (service: AvailableServicesType) => void;
 };
 
 export default function AvailableServices({
@@ -17,27 +17,31 @@ export default function AvailableServices({
       <h2 className="mb-4 text-xl font-semibold">
         Available Services
       </h2>
+
       <div className="grid grid-cols-2 gap-3">
-      {availableServices.map((service) => (
-        <div key={service.id} className="service-tooltip">
-          <button
-          onClick={() => onServiceSelect?.(service.name)}
-               className={`
-                 w-full rounded-md border p-2 transition
-                 ${
-                   selectedService === service.name
-                     ? "service-options-selected"
-                     : "service-options"
-                 }
-               `}>
-            {service.name}
-          </button>
-          <div className="service-tooltip-content">
-            {service.description}
-            <div className="service-tooltip-arrow" />
+        {availableServices.map((service) => (
+          <div key={service.id} className="service-tooltip">
+            <button
+              type="button"
+              onClick={() => onServiceSelect?.(service)}
+              className={`
+                w-full rounded-md border p-2 transition
+                ${
+                  selectedService?.id === service.id
+                    ? "service-options-selected"
+                    : "service-options"
+                }
+              `}
+            >
+              {service.name}
+            </button>
+
+            <div className="service-tooltip-content">
+              {service.description}
+              <div className="service-tooltip-arrow" />
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
       </div>
     </div>
   );
